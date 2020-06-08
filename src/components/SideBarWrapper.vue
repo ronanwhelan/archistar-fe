@@ -1,5 +1,5 @@
 <template>
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse mt-3 ">
         <h3 class="text-muted">Filters</h3>
         <form>
             <div class="form-group">
