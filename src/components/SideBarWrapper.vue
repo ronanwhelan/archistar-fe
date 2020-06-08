@@ -1,5 +1,5 @@
 <template>
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse mt-3">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse mt-3">
         <h3 class="text-muted">Filters</h3>
         <form>
             <div class="form-group">
@@ -24,6 +24,14 @@
                 >
                     <template slot="selection"></template>
                 </multiselect>
+            </div>
+
+            <div class="form-group">
+                <label>Category</label>
+                <select class="form-control" v-model="form.category">
+                    <option value=""></option>
+                    <option v-for="(item,index) in categories" :key="index">{{item}}</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -53,6 +61,7 @@
                     'state': null,
                     'suburb': null,
                     'type': null,
+                    'category': null,
                     selectedSuburbs: []
                 }
             };
@@ -74,7 +83,7 @@
                         map.setLayoutProperty(id, 'visibility', 'visible');
                         return
                     }
-                    if (!form.suburb && !form.state && !form.category && form.selectedSuburbs.length < 1) {
+                    if (!form.suburb && !form.state && !form.category && form.selectedSuburbs.length < 1 && !form.type) {
                         map.setLayoutProperty(id, 'visibility', 'none');
                         return
                     }
@@ -85,7 +94,7 @@
                     }
                     form.suburb && form.suburb.toString() === property.Suburb.toString() ? visibility = 'visible' : null;
                     form.state && form.state.toString() === property.State.toString() ? visibility = 'visible' : null;
-                    form.category && form.suburb.toString() === property.Category.toString() ? visibility = 'visible' : null;
+                    form.category && form.category.toString() === property.Category.toString() ? visibility = 'visible' : null;
                     form.type && form.type.toString() === property.Type.toString() ? visibility = 'visible' : null;
 
                     map.setLayoutProperty(id, 'visibility', visibility);
@@ -117,6 +126,9 @@
             },
             types: function () {
                 return this.filterAttributes('Type');
+            },
+            categories: function () {
+                return this.filterAttributes('Category');
             },
         },
         watch: {
