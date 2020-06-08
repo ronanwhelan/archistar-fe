@@ -15,7 +15,7 @@
     import MainViewer from "./MainViewer";
     import TopNavBar from "./TopNavBar";
     export default {
-        name: "Features",
+        name: "MapAndSearchWrapper",
         components: {TopNavBar, MainViewer, SideBarWrapper}
     }
 </script>

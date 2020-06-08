@@ -1,4 +1,6 @@
-# archistar-fe
+# Archistar Submission - Front End vue.js App
+
+Coding challenge for Front-End Software Engineer
 
 ## Project setup
 ```
