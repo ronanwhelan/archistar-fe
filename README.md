@@ -1,6 +1,5 @@
-# Archistar Submission - Front End vue.js App
+# Coding Challenge - Front End vue.js App
 
-Coding challenge for Front-End Software Engineer
 
  You can find the app [here on netlify](https://sad-northcutt-070aae.netlify.app/)
 
